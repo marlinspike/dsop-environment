@@ -1,6 +1,6 @@
 {
     "general": {
-        "cluster_name": "rke2-demo",
+        "cluster_name": "bb-rke2",
         "cloud": "AzureUSGovernmentCloud",
         "location": "usgovvirginia"
     },
