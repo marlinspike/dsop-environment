@@ -6,9 +6,6 @@ on:
       - 'config.json'
   workflow_dispatch:
 
-env:
-  BB_REPO_NAME: $GITHUB_REF_NAME-${{ github.run_number }}
-  
 jobs:
   deploy-rke2:
     runs-on: ubuntu-latest
@@ -108,15 +105,11 @@ jobs:
       - name: update dev bigbang.yaml file
         shell: bash
         run : |
-          echo "Running update-bigbang... "
-          echo ${{ env.BB_REPO_NAME }}
-          echo $GITHUB_REF_NAME
           ./scripts/update-bigbang-yaml.sh dev ${{ github.repository }} $GITHUB_REF_NAME
 
           ## check in change
           git config --global user.email "no-reply@github-runner.com"
           git config --global user.name  "GitHub Runner"
-          git init
           git add dev/bigbang.yaml
           git commit -m "updated dev/bigbang.yaml"
           git push
