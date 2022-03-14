@@ -104,12 +104,10 @@ jobs:
 
       - name: update dev bigbang.yaml file
         shell: bash
+        continue-on-error: true
         run : |
           ./scripts/update-bigbang-yaml.sh dev ${{ github.repository }} $GITHUB_REF_NAME
-          
-          echo "--- Output of bigbang.yaml ---"
-          cat dev/bigbang.yaml
-
+  
           ## check in change
           git config --global user.email "no-reply@github-runner.com"
           git config --global user.name  "GitHub Runner"
