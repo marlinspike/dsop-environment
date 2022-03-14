@@ -106,6 +106,7 @@ jobs:
         shell: bash
         continue-on-error: true
         run : |
+          ./scripts/reset.sh
           ./scripts/update-bigbang-yaml.sh dev ${{ github.repository }} $GITHUB_REF_NAME
   
           ## check in change
