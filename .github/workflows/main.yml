@@ -108,6 +108,8 @@ jobs:
       - name: update dev bigbang.yaml file
         shell: bash
         run : |
+          echo "Running update-bigbang... "
+          echo ${{ env.BB_REPO_NAME }}
           ./scripts/update-bigbang-yaml.sh dev ${{ github.repository }} ${{ env.BB_REPO_NAME }}
 
           ## check in change
