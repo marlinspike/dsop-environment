@@ -1,6 +1,6 @@
 {
     "general": {
-        "cluster_name": "bb-rke2",
+        "cluster_name": "raft-rke2",
         "cloud": "AzureUSGovernmentCloud",
         "location": "usgovvirginia"
     },
